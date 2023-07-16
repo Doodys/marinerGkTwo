@@ -64,16 +64,14 @@ class ChiTuPrinter:
     def get_firmware_version(self) -> str:
         data = self._send_and_read(b"M4002")
         return data
-        #return self._extract_response_with_regex("^ok ([a-zA-Z0-9_.]+)\n$", data).group(
-        #    1
-        #)
+        # return self._extract_response_with_regex("^ok ([a-zA-Z0-9_.]+)\n$", data).group(1)
 
     def get_state(self) -> str:
         return self._send_and_read(b"M4000")
 
     def get_print_status(self) -> PrintStatus:
         data = self._send_and_read(b"M4000")
-        #match = self._extract_response_with_regex("D:([0-9]+)/([0-9]+)/([0-9]+)", data)
+        # match = self._extract_response_with_regex("D:([0-9]+)/([0-9]+)/([0-9]+)", data)
         print(f"data {data}")
         
         # current_byte = int(match.group(1))
